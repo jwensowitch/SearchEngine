@@ -18,15 +18,13 @@ Team::Team(char* file_name) {
     getline(temp, name);
     temp >> size;
     temp.ignore();
-    numbers = new int[size];
+    numbers = new int[size];    //dynamic parallel arrays for match info
     members = new string[size];
     member_tags = new int[size];
     member_scores = new int[size];
-    for( int i = 0; i < size; ++i) {
+    for( int i = 0; i < size; ++i) {    //reading in names
         temp >> numbers[i];
-        //temp.ignore();
         getline(temp, members[i]);
-        //temp.ignore();
     }
     for( int i = 0; i < size; ++i) {
         member_tags[i] = 0;
@@ -65,15 +63,9 @@ int Team::processScore(int** arr, int tags) {
     return score;
 }
 
-
-//bool Team::operator==(const Team& rhs){
-  //      return rhs.numbers == numbers;
-//}
-
-
 void Team::printTags(const Team& t, int** arr, string verb, char* out) {
     ofstream output;
-    output.open(out);
+    output.open(out);   //opening file for output
     string winner = " ";
     string team1, team2 = " ";
     string* members1_arr;
@@ -85,7 +77,7 @@ void Team::printTags(const Team& t, int** arr, string verb, char* out) {
     int* nums1;
     int* nums2;
     int team1_score = 0, team2_score = 0, team1_size = 0, team2_size = 0, temp = 0, total_tags = 0;
-    if (t.name < name) {
+    if (t.name < name) {    //handles teams alphabetically
         team1 = t.name;
         team2 = name;
         nums1 = t.numbers;
@@ -177,8 +169,8 @@ void Team::printTags(const Team& t, int** arr, string verb, char* out) {
             for(int j = 0; j < team2_size; ++j) {
                 temp = 0;
                 for (int k = 0; k < total_tags; ++k) {
-                    if(arr[k][0] == nums1[i] && arr[k][1] == nums2[j])
-                        temp++;
+                    if(arr[k][0] == nums1[i] && arr[k][1] == nums2[j])  //temp tracks number of times each teamA member
+                        temp++;                                         //tags a teamB member and vice versa
                 }
                 output << "   " << members1_arr[i] << " tagged " << members2_arr[j] << " " << temp << " times" << endl;
             }
@@ -207,6 +199,8 @@ else {
 
     output << "Not Valid Verbosity!" << endl;
     }
+
+    output.close(); //closing output file
 }
 
 void Team::sortArrays(){
@@ -216,9 +210,9 @@ void Team::sortArrays(){
         {
             for(j = i+1; j < size; ++j)
             {
-                if(member_tags[j] > member_tags[i])
+                if(member_tags[j] > member_tags[i])     //sort members by most tags
                 {
-                    t = member_tags[i];
+                    t = member_tags[i];     //storage for swap sort method
                     m = members[i];
                     n = numbers[i];
                     s = member_scores[i];
@@ -245,7 +239,7 @@ void Team::testPrint() {
     cout << endl;
 }
 
-Team::~Team() {
+Team::~Team() {     //destructor to handle dynamic memory allocation
     delete [] numbers;
     delete [] members;
     delete [] member_tags;

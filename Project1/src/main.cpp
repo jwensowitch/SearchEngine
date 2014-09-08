@@ -1,3 +1,5 @@
+//John Wensowitch
+//lasertag
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -9,19 +11,19 @@ using namespace std;
 int** readMatch(char*, int&);
 
 int main(int argc, char* argv[]){
-    int tags; //
-    int** temp = readMatch(argv[3], tags);
+    int tags; //used to keep track of total tags, passed to read match by reference
+    int** temp = readMatch(argv[3], tags);  //pointer to pointers from match info
 
-    Team teamA(argv[1]);
+    Team teamA(argv[1]);    //creating team objects
     Team teamB(argv[2]);
 
-    teamA.processScore(temp, tags);
+    teamA.processScore(temp, tags); //catagorize match info in parallel arrays
     teamB.processScore(temp, tags);
 
     teamA.sortArrays();
     teamB.sortArrays();
 
-    teamB.printTags(teamA, temp, argv[5], argv[4]);
+    teamB.printTags(teamA, temp, argv[5], argv[4]); //where final output is accomplished
 
     return 0;
 }
@@ -36,7 +38,7 @@ if (!matchInput) {
     matchInput >> tags;
     t = tags;
     matchInput.ignore();
-    int** tag_info = new int*[tags];    //delete after use
+    int** tag_info = new int*[tags];
 
     for (int i = 0; i < tags; ++i) {
         tag_info[i] = new int[4];
