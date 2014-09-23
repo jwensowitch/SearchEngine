@@ -1,0 +1,6 @@
+===================
+readme
+===================
+keywords.txt & keywordss.txt both are formatted correctly to requirements of program
+
+keywordsh.txt due to copying and pasting from different sources \cr (character returns) cause unintentional behavior
