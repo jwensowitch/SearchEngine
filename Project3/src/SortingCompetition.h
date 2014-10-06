@@ -2,9 +2,6 @@
 //  SortingCompetition.h
 //  Wensowitch_Project3
 //
-//  Created by Admin on 10/1/14.
-//  Copyright (c) 2014 Admin. All rights reserved.
-//
 
 #ifndef __Wensowitch_Project3__SortingCompetition__
 #define __Wensowitch_Project3__SortingCompetition__

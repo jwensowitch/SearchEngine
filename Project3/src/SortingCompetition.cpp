@@ -2,12 +2,10 @@
 //  SortingCompetition.cpp
 //  Wensowitch_Project3
 //
-//  Created by Admin on 10/1/14.
-//  Copyright (c) 2014 Admin. All rights reserved.
-//
 
 #include "SortingCompetition.h"
 
+void mySwap(string&, string&);
 
 SortingCompetition::SortingCompetition(const string& inputFileName) : input(inputFileName)
 {
@@ -60,9 +58,10 @@ bool SortingCompetition::prepareData()
 
 void SortingCompetition::sortData()
 {
-    size_t i = 0, j = 0, gap, tempLength;
+    size_t i = 0, j = 0, k = 0, gap, tempLength;
     string tempWord;
-    for(gap = wordsSize/2; gap > 0; gap/= 2)
+    
+    for(gap = 2*(wordsSize/pow(2,k+1)) + 1; gap > 0; ++k)
     {
         for(i = gap; i < wordsSize; ++i)
         {
@@ -71,15 +70,18 @@ void SortingCompetition::sortData()
             {
                 if(tempLength < wordsCopy[j-gap].length())
                 {
-                    swap(wordsCopy[j], wordsCopy[j-gap]);
+                    wordsCopy[j].swap(wordsCopy[j-gap]);
                 }
                 else break;
-                
             }
-            
         }
+        
+        gap = 2*(wordsSize/pow(2,k+1));
     }
-    for(gap = wordsSize/2; gap > 0; gap/= 2)
+    
+    k = 0;
+    
+    for(gap = 2*(wordsSize/pow(2,k+1)) + 1; gap > 0; ++k)
     {
         for(i = gap; i < wordsSize; ++i)
         {
@@ -91,14 +93,15 @@ void SortingCompetition::sortData()
                 {
                     if(tempWord < wordsCopy[j-gap])
                     {
-                        swap(wordsCopy[j], wordsCopy[j-gap]);
+                        wordsCopy[j].swap(wordsCopy[j-gap]);
                     }
                     else break;
                 }
             }
-            
         }
+        gap = 2*(wordsSize/pow(2,k+1));
     }
+     
 
 }
 
@@ -109,7 +112,7 @@ void SortingCompetition::outputData(const string& outputFileName)
     
     for (int i = 0; i < wordsSize; ++i)
     {
-        cout << i << " " << wordsCopy[i] << " " << wordsCopy[i].size() << endl;
+        //cout << i << " " << wordsCopy[i] << " " << wordsCopy[i].size() << endl;
 
         output << wordsCopy[i] << endl;
     }
@@ -124,7 +127,10 @@ SortingCompetition::~SortingCompetition()
 }
 
 
-
+void mySwap(string& a, string& b)   //save time of templated
+{
+    string c(move(a)); a = move(b); b=move(c);
+}
 
 
 
