@@ -1,0 +1,8 @@
+digraph "Page"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Page\n|- uid\l- totalWordCount\l- indvCount\l|+ Page()\l+ ~Page()\l+ get_uid()\l+ getCount()\l+ get_title()\l+ get_username()\l+ get_date()\l+ get_text()\l+ set_TotalCount()\l+ addWord()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -title\n-text\n-date\n-username" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{string\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

@@ -1,0 +1,37 @@
+digraph "replaceAll"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="replaceAll",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="TextProcessor::stripHTMLTags",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_text_processor.html#ad0ffbf2516c2099467c602633fd2e7f8"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="TextProcessor::process",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_text_processor.html#a22c1df13273a79f4e031540549ebe683"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Indexer::indexMap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_indexer.html#abc4a6b5cf023f426aad040e093605a6e"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SearchEngine::loadIndex",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_search_engine.html#a8661af1f5b45b9662f1cb959cc6af569"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="SearchEngine::clearLoad",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_search_engine.html#a71f2390c48d522f26a33f5663953492a"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="SearchEngine::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_search_engine.html#a9a07d4580d9ccc4f697267feb114e944"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="SearchEngine::timeIndex",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_search_engine.html#a0d3b651a4e328690f0c9813445de2a04"];
+  Node9 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="SearchEngine::iterativeSearch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_search_engine.html#add73e2052582702649c38a49b49def2a"];
+  Node10 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="SearchEngine::addDocs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_search_engine.html#a101be98d5eb959dda7570e49ce23529a"];
+  Node11 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Indexer::indexAvl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_indexer.html#ab0717c3a4ac016141988066c7c624b53"];
+  Node12 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

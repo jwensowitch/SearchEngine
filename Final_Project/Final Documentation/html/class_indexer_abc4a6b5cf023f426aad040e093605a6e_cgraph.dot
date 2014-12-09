@@ -1,0 +1,21 @@
+digraph "Indexer::indexMap"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Indexer::indexMap",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="TextProcessor::process",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_text_processor.html#a22c1df13273a79f4e031540549ebe683"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Page::get_text",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_page.html#a105475e662886f995d589a67d53caca3"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="TextProcessor::stripHTMLTags",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_text_processor.html#ad0ffbf2516c2099467c602633fd2e7f8"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="replaceAll",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_replace_all_8cpp.html#a3adacf2ac06d54c7c2b8f99eebacc147"];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Porter2Stemmer::stem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespace_porter2_stemmer.html#ad07c4652a1144329db4bdfb6ce640d80"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Page::set_TotalCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_page.html#a10a178b0fc10e776dc55086e460b57c0"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Page::addWord",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_page.html#a09fd07b3dfeac4580475ff0f97bfbdf6"];
+}

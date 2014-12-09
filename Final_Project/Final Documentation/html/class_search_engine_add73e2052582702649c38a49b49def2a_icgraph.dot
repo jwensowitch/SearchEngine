@@ -1,0 +1,18 @@
+digraph "SearchEngine::iterativeSearch"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SearchEngine::iterativeSearch",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SearchEngine::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_search_engine.html#a9a07d4580d9ccc4f697267feb114e944"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SearchEngine::timeIndex",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_search_engine.html#a0d3b651a4e328690f0c9813445de2a04"];
+  Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SearchEngine::clearLoad",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_search_engine.html#a71f2390c48d522f26a33f5663953492a"];
+  Node5 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}
